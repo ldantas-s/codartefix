@@ -20,6 +20,7 @@ const FooterCA = styled.footer`
 
     & > p {
         font-weight: 300;
+        text-align: center;
     }
 `;
 

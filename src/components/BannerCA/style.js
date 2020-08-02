@@ -7,6 +7,11 @@ export const ContentAreaContainer = styled.section`
     align-items: center;
     position: relative;
     z-index: 10;
+    
+    @media(max-width: 800px) {
+        padding: 70px 0;
+        flex-direction: column;
+    }
 `;
 
 ContentAreaContainer.Item = styled.div`
@@ -48,6 +53,10 @@ export const BannerCAMain = styled.section`
         width: 100%;
         height: 100%;
         background: rgba(0,0,0,.8);
+    }
+    
+    @media(max-width: 800px) {
+        height: auto;
     }
 `;
 

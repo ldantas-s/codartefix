@@ -31,7 +31,6 @@ export default function BannerCA({ videoTitle, videoDescription, url }) {
                     <BannerVideoCA youtubeID={youTubeID} />
                 </ContentAreaContainer.Item>
 
-
             </ContentAreaContainer>
         </BannerCAMain>
     );
