@@ -10,7 +10,7 @@ export const ContentAreaContainer = styled.section`
     
     @media(max-width: 800px) {
         padding: 70px 0;
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 `;
 
@@ -18,8 +18,10 @@ ContentAreaContainer.Item = styled.div`
     width: 50%;
     height: 70%;
     padding: 5%;
+
     @media(max-width: 800px) {
         width: 100%;
+        height: 80vh;
     }
 `;
 ContentAreaContainer.Title = styled.h2`

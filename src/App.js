@@ -4,7 +4,6 @@ import React from 'react';
 import HeaderCA from './components/HeaderCA';
 import FooterCA from './components/FooterCA';
 import LogoCA from './components/LogoCA';
-import ButtonCA from './components/ButtonCA';
 import LinkCA from './components/LinkCA';
 import BannerCA from './components/BannerCA';
 
@@ -12,10 +11,7 @@ import BannerCA from './components/BannerCA';
 export default function App() {
     return(
         <>
-            <HeaderCA>
-                <LogoCA></LogoCA>
-                <ButtonCA as="a" href="/">New Video</ButtonCA>  
-            </HeaderCA>
+            <HeaderCA />
 
             <BannerCA 
                 videoTitle="Your Name"

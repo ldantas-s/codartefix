@@ -1,39 +1,36 @@
-import styled from 'styled-components';
+import React, { useState, useEffect } from 'react';
 
+// Components
+import LogoCA from '../LogoCA';
 import ButtonCA from '../ButtonCA';
+// Styles
+import HeaderCAStyle from './style';
 
 
-const HeaderCA = styled.header`
-    width: 100%;
-    height: 70px;
-    padding: 0 5%;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 11;
-  
-    /* background: var(--black); */
-    /* border-bottom: 3px solid var(--primary); */
+export default function HeaderCA() {
+    const [ scrollY, setScrollY ] = useState(0);
+    const [ headerShow, setHeaderShow ] = useState({});
 
-    @media (max-width: 800px) {
-        justify-content: center;
-       
-        & > ${ButtonCA} {
-            border-radius: 0;
-            border: 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--primary);
-            color: var(--white);
-        }
+    window.onscroll = function() {
+        setScrollY(window.scrollY);
     }
-`;
 
-export default HeaderCA;
+    useEffect(() => {
+        if (scrollY > 72) {
+            setHeaderShow({
+                backgroundColor: 'var(--black)',
+                borderBottom: '3px solid var(--primary)'
+            });
+        } else {
+            setHeaderShow({});
+        }
+
+    }, [scrollY]);
+
+    return (
+        <HeaderCAStyle style={headerShow}>
+            <LogoCA></LogoCA>
+            <ButtonCA as="a" href="/">New Video</ButtonCA>  
+        </HeaderCAStyle>
+    );
+}
