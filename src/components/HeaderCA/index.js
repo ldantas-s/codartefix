@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Button from '../Button';
+import ButtonCA from '../ButtonCA';
 
 
 const HeaderCA = styled.header`
@@ -11,18 +11,19 @@ const HeaderCA = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* position: fixed;
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0; */
+    right: 0;
+    z-index: 11;
   
-    background: var(--black);
-    border-bottom: 3px solid var(--primary);
+    /* background: var(--black); */
+    /* border-bottom: 3px solid var(--primary); */
 
     @media (max-width: 800px) {
         justify-content: center;
        
-        & > ${Button} {
+        & > ${ButtonCA} {
             border-radius: 0;
             border: 0;
             position: fixed;
