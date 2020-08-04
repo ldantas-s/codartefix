@@ -45,8 +45,8 @@ export default function CarouselCA({ videoLinks }) {
             ]
           }}>
               {videoLinks.map(({ titulo, url }) => (
-                  <VideoCard>
-                      <LinkCA href={url}>
+                  <VideoCard key="titulo">
+                      <LinkCA href={url} target="_blank">
                           <Title>{ titulo }</Title>
                           <VideoCard.Img src={GetYoutubeInfo(url).thumbnail} alt="Thumbnail video" />
                       </LinkCA>
