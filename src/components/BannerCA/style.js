@@ -9,8 +9,12 @@ export const ContentAreaContainer = styled.section`
     z-index: 10;
     
     @media(max-width: 800px) {
-        padding: 70px 0;
+        padding: 70px 0 0 0;
         flex-direction: column-reverse;
+        
+    & > div:first-child {
+            height: auto;
+        }
     }
 `;
 
