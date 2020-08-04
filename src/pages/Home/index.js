@@ -1,16 +1,16 @@
 import React from 'react';
 
 // Components
-import HeaderCA from './components/HeaderCA';
-import FooterCA from './components/FooterCA';
-import LogoCA from './components/LogoCA';
-import LinkCA from './components/LinkCA';
-import BannerCA from './components/BannerCA';
-import SectionCA from './components/SectionCA';
-import TagCA from './components/TagCA';
-import CarouselCA from './components/CarouselCA';
+import HeaderCA from '../../components/HeaderCA';
+import FooterCA from '../../components/FooterCA';
+import LogoCA from '../../components/LogoCA';
+import LinkCA from '../../components/LinkCA';
+import BannerCA from '../../components/BannerCA';
+import SectionCA from '../../components/SectionCA';
+import TagCA from '../../components/TagCA';
+import CarouselCA from '../../components/CarouselCA';
 // Database
-import { categorias } from './database/youtubeInfo.json';
+import { categorias } from '../../database/youtubeInfo.json';
 
 
 export default function App() {
