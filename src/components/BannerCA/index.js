@@ -4,18 +4,13 @@ import React from 'react';
 import { BannerCAMain, ContentAreaContainer } from './style';
 //Components
 import BannerVideoCA from './components/BannerVideoCA';
+//Services
+import GetYoutubeInfo from '../../services/GetYoutubeInfo';
 
-
-function getYouTubeId(youtubeURL) {
-    return youtubeURL.replace(
-        /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,'$7',
-    );
-}
 
 export default function BannerCA({ videoTitle, videoDescription, url }) {
 
-    const youTubeID = getYouTubeId(url);
-    const bgUrl = `https://img.youtube.com/vi/${youTubeID}/maxresdefault.jpg`;
+    const { bgUrl, iframeSrc } = GetYoutubeInfo(url);
 
     return(
         <BannerCAMain backgroundImg={bgUrl}>
@@ -28,7 +23,7 @@ export default function BannerCA({ videoTitle, videoDescription, url }) {
 
 
                 <ContentAreaContainer.Item>
-                    <BannerVideoCA youtubeID={youTubeID} />
+                    <BannerVideoCA iframeSrc={iframeSrc} />
                 </ContentAreaContainer.Item>
 
             </ContentAreaContainer>
