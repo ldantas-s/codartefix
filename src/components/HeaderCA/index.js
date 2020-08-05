@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 // Components
 import LogoCA from '../LogoCA';
-import ButtonCA from '../ButtonCA';
+// import ButtonCA from '../ButtonCA';
+import MenuCA from '../MenuCA';
 // Styles
 import HeaderCAStyle from './style';
 
@@ -30,7 +31,7 @@ export default function HeaderCA() {
     return (
         <HeaderCAStyle style={headerShow}>
             <LogoCA></LogoCA>
-            <ButtonCA as="a" href="/">New Video</ButtonCA>  
+            <MenuCA />  
         </HeaderCAStyle>
     );
 }
