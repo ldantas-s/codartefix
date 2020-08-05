@@ -1,27 +1,20 @@
-import styled from 'styled-components';
+import React from 'react';
+// Styles
+import FooterStyle from './style';
+// Components
 import LinkCA from '../LinkCA';
+import LogoCA from '../LogoCA';
 
 
-const FooterCA = styled.footer`
-    width: 100%;
-    padding: 10px 0;
-
-    background: var(--black);
-    color: var(--white);
-    border-top: 2px solid var(--primary);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    ${LinkCA}:hover {
-        color: var(--primary);
-    }
-
-    & > p {
-        font-weight: 300;
-        text-align: center;
-    }
-`;
-
-export default FooterCA;
+export default function FooterCA() {
+    return (
+        <FooterStyle>
+            <LinkCA href="/">
+                <LogoCA></LogoCA>
+            </LinkCA>
+            <p>
+                Criado com carinho por <LinkCA target="_blank" href="https://twitter.com/ldantas_s">Luciano Dantas</LinkCA> na {' '}<LinkCA target="_blank" href="https://twitter.com/search?q=%23ImersaoReact&src=recent_search_click">#imersãoReact</LinkCA>
+            </p>
+        </FooterStyle>
+    );
+}
