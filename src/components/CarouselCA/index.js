@@ -2,11 +2,9 @@ import React from 'react';
 import Slide from 'react-slick';
 
 // Components
-import LinkCA from '../LinkCA';
-// Services
-import GetYoutubeInfo from '../../services/GetYoutubeInfo';
+import ThumbnailCA from '../ThumbnailCA';
 // Styles
-import { VideoCard, CarouselStyle, Title } from './style';
+import { CarouselStyle} from './style';
 
 
 export default function CarouselCA({ videoLinks }) {
@@ -45,12 +43,10 @@ export default function CarouselCA({ videoLinks }) {
             ]
           }}>
               {videoLinks.map(({ titulo, url }) => (
-                  <VideoCard key="titulo">
-                      <LinkCA href={url} target="_blank">
-                          <Title>{ titulo }</Title>
-                          <VideoCard.Img src={GetYoutubeInfo(url).thumbnail} alt="Thumbnail video" />
-                      </LinkCA>
-                  </VideoCard>
+                <ThumbnailCA
+                  title={titulo}
+                  url={url}
+                />
               ))}
             </Slide>
         </CarouselStyle>
