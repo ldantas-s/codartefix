@@ -58,7 +58,7 @@ export const BannerCAMain = styled.section`
         position: absolute;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,.8);
+        background: linear-gradient(rgba(0,0,0,.7), rgb(0,0,0));
     }
     
     @media(max-width: 800px) {
