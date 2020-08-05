@@ -12,7 +12,6 @@ import { categorias } from '../../database/youtubeInfo.json';
 
 
 export default function App() {
-    const { titulo, videos } = categorias[0];
     return(
         <>
             <HeaderCA />
@@ -23,10 +22,12 @@ export default function App() {
                 url="https://www.youtube.com/watch?v=nLhKXh6sJtk"
             />
 
-            <SectionCA>
-                <TagCA>{ titulo }</TagCA>
-                <CarouselCA videoLinks={videos} />
-            </SectionCA>
+            {categorias.map(({ titulo, videos, cor }, index) => (
+                <SectionCA key={titulo+index}>
+                    <TagCA color={cor}>{ titulo }</TagCA>
+                    <CarouselCA videoLinks={videos} />
+                </SectionCA>
+            ))}
 
 
             <FooterCA />

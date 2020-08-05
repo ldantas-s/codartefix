@@ -9,7 +9,7 @@ export default function BannerVideoCA({ iframeSrc }) {
             <VideoIframe 
                 src={ iframeSrc } 
                 frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                // allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
             />
         </ContainerVideoCA>

@@ -15,7 +15,7 @@ const TagCA = styled.h2`
         bottom: 3px;
         width: 101%;
         height: 10px;
-        background-color: orangered;
+        background-color: ${props => props.color || 'red'};
         z-index: -1;
         transform-origin: center bottom;
         transition: transform 100ms linear;
