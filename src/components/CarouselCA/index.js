@@ -42,11 +42,11 @@ export default function CarouselCA({ videoLinks }) {
                 }
             ]
           }}>
-              {videoLinks.map(({ titulo, url }, index) => (
+              {videoLinks.map(({ url, titulo }, index) => (
                 <ThumbnailCA
                   key={titulo+index}
                   title={titulo}
-                  url={url}
+                  urls={{ urlVideo:url, urlCateg: '' }}
                 />
               ))}
             </Slide>

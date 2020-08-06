@@ -8,12 +8,18 @@ import { VideoCard, Title } from './style';
 import GetYoutubeInfo from '../../services/GetYoutubeInfo';
 
 
-export default function ThumbnailCA({ url, title }) {
-    return (
+export default function ThumbnailCA({ urls, title}) {
+    const { urlVideo, urlCateg } = urls;
+    let existUrlCateg = urlCateg !== '';
+    
+    let url = existUrlCateg ? urlCateg : urlVideo;
+    let target = existUrlCateg ? '_self': '_blank';
+
+    return ( 
         <VideoCard key="titulo">
-            <LinkCA href={url} target="_blank">
+            <LinkCA href={url} target={target}>
                 <Title>{ title }</Title>
-                <VideoCard.Img src={GetYoutubeInfo(url).thumbnail} alt="Thumbnail video" />
+                <VideoCard.Img src={GetYoutubeInfo(urlVideo).thumbnail} alt="Thumbnail video" />
             </LinkCA>
         </VideoCard>
     );
