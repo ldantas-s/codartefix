@@ -8,7 +8,8 @@ import { VideoCard, Title } from './style';
 import GetYoutubeInfo from '../../services/GetYoutubeInfo';
 
 
-export default function ThumbnailCA({ urls, title}) {
+export default function ThumbnailCA({ urls, title }) {
+    console.log(urls)
     const { urlVideo, urlCateg } = urls;
     let existUrlCateg = urlCateg !== '';
     

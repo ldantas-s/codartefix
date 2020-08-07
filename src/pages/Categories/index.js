@@ -18,20 +18,13 @@ export default function Categories() {
                 </MainCategories.Header>
 
                 <MainCategories.Main>
-                    {/* <ul> */}
                     {categorias.map(({ titulo, videos }, index) => (
                         <ThumbnailCA
                             key={index}
                             urls={{ urlVideo: videos[0].url, urlCateg:titulo.replaceAll(' ','-').toLowerCase() }}
                             title={titulo}
                         />
-                        // <li>
-                        //     urlCategoria : '/{titulo.replaceAll(' ','-').toLowerCase()}'<br /> 
-                        //     title: {titulo}<br />
-                        //     urlbacjground: {videos[0].url}
-                        // </li>
                     ))}
-                    {/* </ul> */}
                 </MainCategories.Main>
 
 

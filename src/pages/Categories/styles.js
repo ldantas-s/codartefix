@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+// Images
+import bgCategories from '../../assets/img/background-categories.jpg';
 
 export const MainCategories = styled.main`
     color: white;
@@ -8,7 +10,9 @@ MainCategories.Header = styled.header`
     height: 30vh;
     padding: 70px 5% 0;
     position: relative;
-    /* background: rgba(231,0,0,.2); */
+    background: url(${bgCategories});
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: flex-end; 
 
@@ -33,11 +37,13 @@ MainCategories.Header = styled.header`
         left: 0;
         right: 0;
 
-        background: rgba(247, 118, 42,.2);
+        background: linear-gradient(rgba(0,0,0,.6), rgb(0,0,0));
     }
 `;
 
 MainCategories.Main = styled.main`
     padding: 70px 5%;
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 `;
