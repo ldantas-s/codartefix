@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 
 const TagCA = styled.h2`
+    text-decoration: none;
+    font-size: 24px;
     font-weight: 500;
     color: var(--white);
     position: relative;

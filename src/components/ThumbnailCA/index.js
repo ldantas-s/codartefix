@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Components
 import LinkCA from '../LinkCA';
@@ -9,16 +10,17 @@ import GetYoutubeInfo from '../../services/GetYoutubeInfo';
 
 
 export default function ThumbnailCA({ urls, title }) {
-    console.log(urls)
     const { urlVideo, urlCateg } = urls;
     let existUrlCateg = urlCateg !== '';
     
-    let url = existUrlCateg ? urlCateg : urlVideo;
-    let target = existUrlCateg ? '_self': '_blank';
+    let url = existUrlCateg ? `category/${urlCateg}` : urlVideo,
+        target = existUrlCateg ? '_self': '_blank',
+        tag = existUrlCateg ? Link : 'a';
+
 
     return ( 
         <VideoCard key="titulo">
-            <LinkCA href={url} target={target}>
+            <LinkCA as={tag} to={url} href={existUrlCateg ? '' : url} target={target}>
                 <Title>{ title }</Title>
                 <VideoCard.Img src={GetYoutubeInfo(urlVideo).thumbnail} alt="Thumbnail video" />
             </LinkCA>

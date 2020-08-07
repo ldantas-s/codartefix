@@ -19,11 +19,11 @@ ReactDOM.render(
     <Switch>
       <Route path="/" component={Home} exact />,
       <Route path="/categories" component={Categories} />,
-      <Route path="/category" component={Category} />,
+      <Route path="/category/:slug" component={Category} />,
       <Route path="/register-category" component={RegisterCategory} />,
       <Route path="/register-video" component={RegisterVideo} />,
 
-      <Route component={Page404} />,
+      <Route path="*" component={Page404} />,
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')

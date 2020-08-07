@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // Components
 import HeaderCA from '../../components/HeaderCA';
@@ -24,7 +25,7 @@ export default function App() {
 
             {categorias.map(({ titulo, videos, cor }, index) => (
                 <SectionCA key={titulo+index}>
-                    <TagCA color={cor}>{ titulo }</TagCA>
+                    <TagCA as={Link} to={`category/${titulo.replaceAll(' ','-').toLowerCase()}`} color={cor}>{ titulo }</TagCA>
                     <CarouselCA videoLinks={videos} />
                 </SectionCA>
             ))}
