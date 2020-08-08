@@ -25,7 +25,7 @@ export default function App() {
 
             {categorias.map(({ titulo, videos, cor }, index) => (
                 <SectionCA key={titulo+index}>
-                    <TagCA as={Link} to={`category/${titulo.replaceAll(' ','-').toLowerCase()}`} color={cor}>{ titulo }</TagCA>
+                    <TagCA as={Link} to={`category/${titulo.replace(/' '/g,' ','-').toLowerCase()}`} color={cor}>{ titulo }</TagCA>
                     <CarouselCA videoLinks={videos} />
                 </SectionCA>
             ))}

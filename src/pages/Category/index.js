@@ -11,7 +11,7 @@ import { categorias } from "../../database/youtubeInfo.json";
 
 export default function Category() {
     const { slug } = useParams();
-    const { titulo, videos } = categorias.filter((categoria) => categoria.titulo.replaceAll(' ','-').toLowerCase() === slug)[0];
+    const { titulo, videos } = categorias.filter((categoria) => categoria.titulo.replace(/' '/g,' ','-').toLowerCase() === slug)[0];
 
     return(
         <PageDefault>

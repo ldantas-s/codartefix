@@ -21,7 +21,7 @@ export default function Categories() {
                     {categorias.map(({ titulo, videos }, index) => (
                         <ThumbnailCA
                             key={index}
-                            urls={{ urlVideo: videos[0].url, urlCateg:titulo.replaceAll(' ','-').toLowerCase() }}
+                            urls={{ urlVideo: videos[0].url, urlCateg:titulo.replace(/' '/g,' ','-').toLowerCase() }}
                             title={titulo}
                         />
                     ))}
