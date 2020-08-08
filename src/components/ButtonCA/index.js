@@ -13,6 +13,7 @@ const Button = styled.button`
 
     color: var(--white);
     border: 1px solid var(--white);
+    cursor: pointer;
     transition: all .1s ease-in-out .1s;
 
 
