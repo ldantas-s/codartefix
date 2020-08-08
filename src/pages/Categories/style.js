@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import bgCategories from '../../assets/img/background-categories.jpg';
 
 export const MainCategories = styled.main`
-    color: white;
 `;
 
 MainCategories.Header = styled.header`
@@ -13,6 +12,7 @@ MainCategories.Header = styled.header`
     background: url(${bgCategories});
     background-size: cover;
     background-position: center;
+    color: white;
     display: flex;
     align-items: flex-end; 
 
@@ -45,5 +45,8 @@ MainCategories.Main = styled.main`
     padding: 70px 5%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+
+    & > div {
+        flex-grow: 1;
+    }
 `;

@@ -4,7 +4,7 @@ import React from 'react';
 import PageDefault from '../PageDefault';
 import ThumbnailCA from '../../components/ThumbnailCA';
 // Styles
-import { MainCategories } from './styles' ;
+import { MainCategories } from './style';
 // database
 import { categorias } from "../../database/youtubeInfo.json";
 
