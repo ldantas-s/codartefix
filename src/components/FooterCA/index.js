@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 // Styles
 import FooterStyle from './style';
 // Components
@@ -9,7 +10,7 @@ import LogoCA from '../LogoCA';
 export default function FooterCA() {
     return (
         <FooterStyle>
-            <LinkCA href="/">
+            <LinkCA as={Link} to="/">
                 <LogoCA></LogoCA>
             </LinkCA>
             <p>

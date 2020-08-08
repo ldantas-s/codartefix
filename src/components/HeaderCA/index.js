@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 // Components
 import LogoCA from '../LogoCA';
@@ -6,6 +7,7 @@ import LogoCA from '../LogoCA';
 import MenuCA from '../MenuCA';
 // Styles
 import HeaderCAStyle from './style';
+import LinkCA from '../LinkCA';
 
 
 export default function HeaderCA() {
@@ -30,7 +32,9 @@ export default function HeaderCA() {
 
     return (
         <HeaderCAStyle style={headerShow}>
-            <LogoCA></LogoCA>
+            <LinkCA as={Link} to="/">
+                <LogoCA></LogoCA>
+            </LinkCA>
             <MenuCA />  
         </HeaderCAStyle>
     );

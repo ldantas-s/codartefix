@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-
+// Components
 import ButtonCA from '../ButtonCA';
+import LinkCA from '../LinkCA';
 
 
-const HeaderCA = styled.header`
+const HeaderCAStyle = styled.header`
     width: 100%;
     height: 70px;
     padding: 0 5%;
@@ -17,11 +18,12 @@ const HeaderCA = styled.header`
     left: 0;
     right: 0;
     z-index: 11;
-  
-    /* background: var(--black); */
-    /* border-bottom: 3px solid var(--primary); */
+
     transition: background-color 100ms linear, border-bottom 100ms linear;
 
+    & > ${LinkCA} {
+        text-align: left;
+    }
     @media (max-width: 800px) {
         justify-content: center;
        
@@ -36,6 +38,7 @@ const HeaderCA = styled.header`
             color: var(--white);
         }
     }
+
 `;
 
-export default HeaderCA;
+export default HeaderCAStyle;
