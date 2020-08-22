@@ -19,9 +19,12 @@ export const FieldCAStyle = styled.input`
     background: none;
     width: 100%;
     padding: 10px 15px;
+    border-radius: 3px;
     border: 1px solid var(--white);
-    border-bottom: 3px solid var(--white);
+    border-bottom: 2px solid var(--white);
     color: white;
+    transition: border-bottom-color 200ms linear;
+
     ${({ value }) => {
         const testValue = value.length > 0;
         return testValue && css`
@@ -31,6 +34,7 @@ export const FieldCAStyle = styled.input`
                 font-size: 12px;
                 transition: all 100ms linear;
             }
+            border-bottom-color: var(--primary) !important;
         `;
     }}
 `;

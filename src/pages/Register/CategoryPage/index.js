@@ -4,7 +4,7 @@ import PageDefault from '../../PageDefault';
 import FormFieldCA from '../../../components/FormFieldCA';
 import ButtonCA from '../../../components/ButtonCA';
 // Styles
-import { CategoryPageMain } from './style';
+import { CategoryPageMain, CategoryForm } from './style';
 
 
 
@@ -42,14 +42,24 @@ export default function CategoryPage() {
             <CategoryPageMain>
                 <CategoryPageMain.Content>
                     <h1>Category Register</h1>
-                    <form onSubmit={handleSubmit}>
-                        <FormFieldCA
-                            label="Category Name"
-                            type="input"
-                            name="categoryName"
-                            value={values.categoryName || ''}
-                            onChange={handleChange}
-                        />
+                    <CategoryForm onSubmit={handleSubmit}>
+                        <CategoryForm.Section>
+                            <FormFieldCA
+                                label="Category Name"
+                                type="input"
+                                name="categoryName"
+                                value={values.categoryName || ''}
+                                onChange={handleChange}
+                            />
+                            <FormFieldCA
+                                label="Category Color"
+                                type="color"
+                                name="categoryColor"
+                                value={values.categoryColor || '#000'}
+                                onChange={handleChange}
+                            />
+                        </CategoryForm.Section>
+
                         <FormFieldCA
                             label="Category Description"
                             type="textarea"
@@ -57,16 +67,10 @@ export default function CategoryPage() {
                             value={values.categoryDescription || ''}
                             onChange={handleChange}
                         />
-                        <FormFieldCA
-                            label="Category Color"
-                            type="color"
-                            name="categoryColor"
-                            value={values.categoryColor || '#000'}
-                            onChange={handleChange}
-                        />
+                        
                         
                         <ButtonCA>Register</ButtonCA>
-                    </form>
+                    </CategoryForm>
                     <ul>
                         {categories.map((category, index) => (
                             <li key={index}>{category.categoryName}</li>
