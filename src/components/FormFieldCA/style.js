@@ -22,7 +22,7 @@ export const FieldCAStyle = styled.input`
     border-radius: 3px;
     border: 1px solid var(--white);
     border-bottom: 2px solid var(--white);
-    color: white;
+    color: var(--white);
     transition: border-bottom-color 200ms linear;
 
     ${({ value }) => {

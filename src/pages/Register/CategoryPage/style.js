@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 // Components
 import ButtonCA from '../../../components/ButtonCA';
-import FormFieldCA from '../../../components/FormFieldCA';
 
 
 export const CategoryPageMain = styled.main`
@@ -12,7 +11,7 @@ export const CategoryPageMain = styled.main`
 `;
 CategoryPageMain.Content = styled.section`
     width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,6 +23,7 @@ CategoryPageMain.Content = styled.section`
         margin-bottom: 40px;
     }
 `;
+
 export const CategoryForm = styled.form`
     width: 755px;
     padding: 35px;
@@ -39,27 +39,43 @@ export const CategoryForm = styled.form`
         resize: vertical;
         min-height: 100px;
     }
+`;
+CategoryForm.SectionInput = styled.div`
+    display: flex;
+
+    & > div:last-child {
+        flex-shrink: 5;
+    }
     & input[type='color'] {
         padding: 3px 2px;
         height: 42px;
         cursor: pointer;
     }
-
+`;
+CategoryForm.SectionButton = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    /* padding: 0 10px; */
     & ${ButtonCA} {
         background: var(--primary);
-        margin: auto;
         padding: 10px 36px;
+        border-radius: 3px;
     }
-    & ${ButtonCA}:hover {
-        border-color: transparent;
+    & > ${ButtonCA}:hover {
         background: var(--primary);
         color: var(--white);
+        transform: scale(1.03);
+        transition: transform 100ms linear;
     }
 `;
-CategoryForm.Section = styled.div`
-    display: flex;
 
-    & > div:last-child {
-        flex-shrink: 5;
+export const CategoryTable = styled.table`
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid #414141;
+    th, td {
+        background-color: rgba(41,255,41,.2);
+        padding: 12px 16px;
     }
 `;

@@ -4,7 +4,7 @@ import PageDefault from '../../PageDefault';
 import FormFieldCA from '../../../components/FormFieldCA';
 import ButtonCA from '../../../components/ButtonCA';
 // Styles
-import { CategoryPageMain, CategoryForm } from './style';
+import { CategoryPageMain, CategoryForm, CategoryTable } from './style';
 
 
 
@@ -43,7 +43,7 @@ export default function CategoryPage() {
                 <CategoryPageMain.Content>
                     <h1>Category Register</h1>
                     <CategoryForm onSubmit={handleSubmit}>
-                        <CategoryForm.Section>
+                        <CategoryForm.SectionInput>
                             <FormFieldCA
                                 label="Category Name"
                                 type="input"
@@ -58,7 +58,7 @@ export default function CategoryPage() {
                                 value={values.categoryColor || '#000'}
                                 onChange={handleChange}
                             />
-                        </CategoryForm.Section>
+                        </CategoryForm.SectionInput>
 
                         <FormFieldCA
                             label="Category Description"
@@ -68,14 +68,32 @@ export default function CategoryPage() {
                             onChange={handleChange}
                         />
                         
-                        
-                        <ButtonCA>Register</ButtonCA>
+                        <CategoryForm.SectionButton>
+                            <ButtonCA>Register</ButtonCA>
+                        </CategoryForm.SectionButton>
+
+                            {/* {categories.map((category, index) => (
+                                <li key={index}>{category.categoryName}</li>
+                            ))} */}
+                        <CategoryTable>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    categories.map(( { categoryName, categoryDescription }, index ) => (
+                                        <tr key={index}>
+                                            <td>{ categoryName }</td>
+                                            <td>{ categoryDescription }</td>
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
+                        </CategoryTable>
                     </CategoryForm>
-                    <ul>
-                        {categories.map((category, index) => (
-                            <li key={index}>{category.categoryName}</li>
-                        ))}
-                    </ul>
                 </CategoryPageMain.Content>
             </CategoryPageMain>
         </PageDefault>
