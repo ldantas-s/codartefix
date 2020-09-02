@@ -1,44 +1,40 @@
 import styled from 'styled-components';
-// Components
-import ButtonCA from '../ButtonCA';
-import LinkCA from '../LinkCA';
 
 
-const HeaderCAStyle = styled.header`
-    width: 100%;
-    height: 70px;
-    padding: 0 5%;
-    border-bottom: 3px solid transparent;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+export const Header = styled.header`
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 11;
-
+    height: 70px;
+    padding: 0 70px;
+    display: flex;
+    align-items: center;
+    z-index: 15;
+    border-bottom: 3px solid transparent;
     transition: background-color 100ms linear, border-bottom 100ms linear;
-
-    & > ${LinkCA} {
-        text-align: left;
-    }
-    @media (max-width: 800px) {
-        justify-content: center;
-       
-        & > ${ButtonCA} {
-            border-radius: 0;
-            border: 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--primary);
-            color: var(--white);
-        }
-    }
-
 `;
-
-export default HeaderCAStyle;
+Header.Menu = styled.ul`
+    list-style: none;
+    padding: 2px 20px;
+    margin-left: 20px;
+    display: flex;
+    border-left: 1px solid rgba(255,255,255,.5);
+`;
+Header.MenuItem = styled.li`
+    &:first-child {
+        margin-right: 15px;
+    }
+    & > a {
+        text-decoration: none;
+        color: rgba(255,255,255,.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+    & > a:hover {
+        color: white;
+        transition: all 100ms;
+    }
+`;

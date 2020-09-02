@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FaCaretDown } from 'react-icons/fa';
 
 // Components
 import LogoCA from '../LogoCA';
-// import ButtonCA from '../ButtonCA';
 import MenuCA from '../MenuCA';
 // Styles
-import HeaderCAStyle from './style';
-import LinkCA from '../LinkCA';
+import { Header } from './style';
 
 
 export default function HeaderCA() {
@@ -31,11 +30,14 @@ export default function HeaderCA() {
     }, [scrollY]);
 
     return (
-        <HeaderCAStyle style={headerShow}>
-            <LinkCA as={Link} to="/">
+        <Header style={headerShow}>
+            <a as={Link} to="/">
                 <LogoCA></LogoCA>
-            </LinkCA>
-            <MenuCA />  
-        </HeaderCAStyle>
+            </a>
+            <Header.Menu>
+                <Header.MenuItem><Link to="/">Home</Link></Header.MenuItem>
+                <Header.MenuItem><Link to="/categories">Categories<FaCaretDown /></Link></Header.MenuItem>
+            </Header.Menu> 
+        </Header>
     );
 }
