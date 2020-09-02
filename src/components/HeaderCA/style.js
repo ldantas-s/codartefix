@@ -20,8 +20,18 @@ Header.Menu = styled.ul`
     margin-left: 20px;
     display: flex;
     border-left: 1px solid rgba(255,255,255,.5);
+
+    & > li:nth-child(2):hover > ul {
+       transform: scaleY(1);
+       transition: transform 100ms linear;
+    }
+    & > li {
+        padding-bottom: 10px;
+    }
 `;
 Header.MenuItem = styled.li`
+    position: relative;
+    color: white;
     &:first-child {
         margin-right: 15px;
     }
@@ -37,4 +47,25 @@ Header.MenuItem = styled.li`
         color: white;
         transition: all 100ms;
     }
+`;
+
+Header.Dropdown = styled.ul`
+    position: absolute;
+    top: 38px;
+    list-style: none;
+    padding: 10px;
+    color: white;
+    background: rgb(0,0,0);
+    border: 1px solid var(--primary);
+    display: grid;
+    grid-gap: 5px;
+    
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 100ms linear;
+
+`;
+Header.DropdownItem = styled.li`
+    padding: 5px;
+    cursor: pointer;
 `;

@@ -4,9 +4,10 @@ import { FaCaretDown } from 'react-icons/fa';
 
 // Components
 import LogoCA from '../LogoCA';
-import MenuCA from '../MenuCA';
 // Styles
 import { Header } from './style';
+// Database
+import { categorias } from '../../database/youtubeInfo.json';
 
 
 export default function HeaderCA() {
@@ -31,13 +32,26 @@ export default function HeaderCA() {
 
     return (
         <Header style={headerShow}>
-            <a as={Link} to="/">
+            <Link to="/">
                 <LogoCA></LogoCA>
-            </a>
+            </Link>
             <Header.Menu>
                 <Header.MenuItem><Link to="/">Home</Link></Header.MenuItem>
-                <Header.MenuItem><Link to="/categories">Categories<FaCaretDown /></Link></Header.MenuItem>
+                <Header.MenuItem>
+                    <Link to="">Categories<FaCaretDown /></Link>
+                
+                    <Header.Dropdown>
+                        {categorias.map(({ titulo }, index) => (
+                            <Header.DropdownItem key={titulo + index}>
+                                <Link to={`category/${titulo.replace(/' '/g,' ','-').toLowerCase()}`}>
+                                    { titulo }
+                                </Link>
+                            </Header.DropdownItem>
+                        ))}
+                    </Header.Dropdown>
+                </Header.MenuItem>
             </Header.Menu> 
+                
         </Header>
     );
 }
