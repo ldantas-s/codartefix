@@ -16,17 +16,16 @@ export const Header = styled.header`
 `;
 Header.Menu = styled.ul`
     list-style: none;
-    padding: 2px 20px;
+    padding: 0 20px;
+    height: 40px;
     margin-left: 20px;
     display: flex;
+    align-items: center;
     border-left: 1px solid rgba(255,255,255,.5);
 
     & > li:nth-child(2):hover > ul {
        transform: scaleY(1);
        transition: transform 100ms linear;
-    }
-    & > li {
-        padding-bottom: 10px;
     }
 `;
 Header.MenuItem = styled.li`
@@ -53,6 +52,7 @@ Header.Dropdown = styled.ul`
     position: absolute;
     top: 38px;
     list-style: none;
+    width: 200px;
     padding: 10px;
     color: white;
     background: rgb(0,0,0);
@@ -68,4 +68,11 @@ Header.Dropdown = styled.ul`
 Header.DropdownItem = styled.li`
     padding: 5px;
     cursor: pointer;
+    > a {
+        text-decoration: none;
+    }
+    > a:hover {
+        color: white;
+        font-weight: 500;
+    }
 `;

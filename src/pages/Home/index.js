@@ -6,10 +6,11 @@ import HeaderCA from '../../components/HeaderCA';
 import FooterCA from '../../components/FooterCA';
 import BannerCA from '../../components/BannerCA';
 import SectionCA from '../../components/SectionCA';
-import TagCA from '../../components/TagCA';
 import CarouselCA from '../../components/CarouselCA';
 // Database
 import { categorias } from '../../database/youtubeInfo.json';
+// Style
+import { TagCategory } from './style';
 
 
 export default function App() {
@@ -25,7 +26,7 @@ export default function App() {
 
             {categorias.map(({ titulo, videos, cor }, index) => (
                 <SectionCA key={titulo+index}>
-                    <TagCA as={Link} to={`category/${titulo.replace(/' '/g,' ','-').toLowerCase()}`} color={cor}>{ titulo }</TagCA>
+                    <TagCategory as={Link} to={`category/${titulo.replace(/' '/g,' ','-').toLowerCase()}`} color={cor}>{ titulo }</TagCategory>
                     <CarouselCA videoLinks={videos} />
                 </SectionCA>
             ))}
