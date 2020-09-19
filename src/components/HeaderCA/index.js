@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import { FaCaretDown } from 'react-icons/fa';
 
 // Components
@@ -13,6 +13,11 @@ import { categorias } from '../../database/youtubeInfo.json';
 export default function HeaderCA() {
     const [ scrollY, setScrollY ] = useState(0);
     const [ headerShow, setHeaderShow ] = useState({});
+    const [ url ] = useState(useRouteMatch().path.slice(0,10));
+
+    function urlCategories(slug) {
+        return url === '/category/' ? slug :`category/${slug}`;
+    }
 
     window.onscroll = function() {
         setScrollY(window.scrollY);
@@ -43,7 +48,7 @@ export default function HeaderCA() {
                     <Header.Dropdown>
                         {categorias.map(({ titulo }, index) => (
                             <Header.DropdownItem key={titulo + index}>
-                                <Link to={`category/${titulo.replace(/' '/g,' ','-').toLowerCase()}`}>
+                                <Link to={() => urlCategories(titulo.replace(/' '/g,' ','-').toLowerCase())}>
                                     { titulo }
                                 </Link>
                             </Header.DropdownItem>
