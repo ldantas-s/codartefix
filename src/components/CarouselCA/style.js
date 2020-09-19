@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 
+
 export const CarouselStyle = styled.section`
     .slick-prev,
     .slick-next {
